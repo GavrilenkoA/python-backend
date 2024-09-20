@@ -1,3 +1,35 @@
-# python-backend
-ITMO course Autumn 2024
+__Реализация "Математических API" через ASGI-compatible функцию__
 
+* Запуск сервера Uvicorn: ```uvicorn app:app --reload```
+* **Тестирование** работы эндпоинтов:
+
+1. Вычисление факториала числа
+   ``` bash
+   curl -X GET "http://127.0.0.1:8000/factorial?n=5"
+   ```
+    Ожидаемый ответ:
+   ```bash
+   {"result": 120}
+   ```
+
+2. Вычисление числа Фибоначчи
+   ``` bash
+   curl -X GET "http://127.0.0.1:8000/fibonacci/10"
+   ```
+    Ожидаемый ответ:
+   ```bash
+   {"result": 55}
+   ```
+3. Вычисление среднего массива чисел с плавающей точкой
+    ``` bash
+   curl -X GET "http://127.0.0.1:8000/mean" -H "Content-Type: application/json" -d '[1, 2.3, 3.6]'
+   ```
+
+    Ожидаемый ответ:
+   ```bash
+   {"result": 2.6333333333333333}
+   ```
+
+
+
+    
